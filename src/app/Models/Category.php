@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $table = 'tags';
+    protected $table = 'categories';
     /**
      * Fields for tags
      * @var array

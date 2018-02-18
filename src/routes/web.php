@@ -11,15 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
+/***************    Auth routes  **********************************/
+Route::group(['middleware' => 'auth'], function() {
+
+    Route::get('categories/create','CategoriesController@create')->name('categories.create');
+    Route::post('categories','CategoriesController@store')->name('category.store');
+
+    Route::get('articles/create','ArticlesController@create')->name('articles.create');
+    Route::post('articles','ArticlesController@store')->name('article.store');
 });
 
-//Auth::routes();
+
+/***************    Site routes  **********************************/
+Route::get('/', function () {
+    return view('pages.home');
+})->name('home');
+
+Route::get('404', function () {
+    return view('pages.404');
+})->name('404');
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::get('articles','ArticlesController@index')->name('articles');
+Route::get('articles/{id}', 'ArticlesController@show')->name('article');
+Route::get('categories','CategoriesController@index')->name('categories');
+Route::get('categories/{id}', 'CategoriesController@show')->name('category');
 
-Route::get('/home', 'HomeController@index')->name('home');
+

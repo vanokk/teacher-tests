@@ -13,8 +13,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
         <!-- Styles -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/mdb.min.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/mdb.min.css" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 
@@ -35,12 +35,12 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{ url('/') }}">Home
+                                <a class="nav-link" href="{{ url('/') }}">Главная
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="{{ route('categories') }}">Разделы</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Profile</a>
@@ -48,14 +48,14 @@
 
                             @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                    <a class="nav-link" href="{{ route('login') }}">Войти</a>
                                 </li>
                             @else
                                 <li class="nav-item">
                                     <a  class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ Auth::user()->name }} Logout
+                                        {{ Auth::user()->name }} Выйти
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
@@ -64,7 +64,7 @@
                             @endguest
                         </ul>
                         <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Поиск" aria-label="Search">
                         </form>
                     </div>
                 </div>
@@ -182,10 +182,10 @@
 
         <!-- SCRIPTS -->
         <!-- JQuery -->
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js//popper.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/mdb.js"></script>
-        <script src="js/app.js"></script>
+        <script src="/js/jquery-3.2.1.min.js"></script>
+        <script src="/js//popper.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/mdb.js"></script>
+        <script src="/js/app.js"></script>
     </body>
 </html>
