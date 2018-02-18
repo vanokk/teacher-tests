@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" class="full-height">
+<html lang="{{ app()->getLocale() }}" class="@if(Request::is('/')) full-height @endif">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 
-    <body>
+    <body class="@if(!Request::is('/')) default-page @endif ">
         <!--Main Navigation-->
         <header>
 

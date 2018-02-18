@@ -13,10 +13,13 @@ footer.page-footer {
   background: transparent !important;
 }
 
-@media (max-width: 768px) {
-  .navbar:not(.top-nav-collapse) {
-    background: #7283A7 !important;
-  }
+.default-page .navbar:not(.top-nav-collapse) {
+  background: #7283A7 !important;
+}
+
+.default-page main {
+  margin-top: 64px;
+  padding-top: 40px;
 }
 
 h1 {
@@ -32,15 +35,6 @@ h5 {
   width: 80px;
 }
 
-@media (max-width: 740px) {
-  .full-height,
-  .full-height body,
-  .full-height header,
-  .full-height header .view {
-    height: 700px;
-  }
-}
-
 .full-height,
 .full-height body,
 .full-height header,
@@ -54,5 +48,34 @@ p {
 
 .font-small {
   font-size: 0.9rem;
+}
+
+.form-header {
+  color: #fff;
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border-radius: 2px;
+}
+
+.has-error .help-block {
+  color: #dc3545;
+  margin-left: 3rem;
+}
+
+@media (max-width: 768px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #7283A7 !important;
+  }
+}
+
+@media (max-width: 740px) {
+  .full-height,
+  .full-height body,
+  .full-height header,
+  .full-height header .view {
+    height: 700px;
+  }
 }
 
