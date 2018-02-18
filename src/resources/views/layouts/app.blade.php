@@ -13,9 +13,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/mdb.min.css">
-        <link rel="stylesheet" href="css/app.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/mdb.min.css" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 
     <body>
@@ -25,7 +25,7 @@
             <!--Navbar-->
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar mdb-color lighten-2">
                 <div class="container">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         <strong>MDB</strong>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7"
@@ -35,7 +35,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home
+                                <a class="nav-link" href="{{ url('/') }}">Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
@@ -45,6 +45,26 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Profile</a>
                             </li>
+
+                            @guest
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <a  class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ Auth::user()->name }} Logout
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            @endguest
                         </ul>
                         <form class="form-inline">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -165,14 +185,10 @@
 
         <!-- SCRIPTS -->
         <!-- JQuery -->
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <!-- Bootstrap tooltips -->
-        <script type="text/javascript" src="js/popper.min.js"></script>
-        <!-- Bootstrap core JavaScript -->
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <!-- MDB core JavaScript -->
-        <script type="text/javascript" src="js/mdb.js"></script>
-
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js//popper.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/mdb.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>
