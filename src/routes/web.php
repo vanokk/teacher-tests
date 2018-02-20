@@ -35,9 +35,9 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('articles','ArticlesController@index')->name('articles');
-Route::get('articles/{id}', 'ArticlesController@show')->name('article');
-Route::get('categories','CategoriesController@index')->name('categories');
-Route::get('categories/{id}', 'CategoriesController@show')->name('category');
+//Route::get('articles','ArticlesController@index')->name('articles.index');
+Route::get('articles/{id}', 'ArticlesController@show')->name('articles.show');
+Route::get('categories','CategoriesController@index')->name('categories.index');
+//Route::get('categories/{id}', 'CategoriesController@show')->name('categories.show');
 
 

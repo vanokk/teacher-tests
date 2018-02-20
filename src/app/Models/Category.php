@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $table = 'categories';
+
     /**
      * Fields for tags
      * @var array
@@ -15,14 +16,9 @@ class Category extends Model
         'name',
         'description'
     ];
+
     public function articles()
     {
-        return $this->belongsToMany('App\Models\Article');
+        return $this->hasMany('App\Models\Article');
     }
-
-
-//    public function articlesByTag($tag){
-//
-//        return $this->belongsToMany('App\Article');//->withTimestamps();
-//    }
 }

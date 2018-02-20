@@ -48,6 +48,6 @@ class CategoriesController extends Controller
         $category->desc = $request->desc;
         $category->save();
 
-        return redirect('categories');
+        return redirect('categories.show');
     }
 }

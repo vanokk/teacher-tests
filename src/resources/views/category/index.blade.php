@@ -16,10 +16,8 @@
         </div>
     </div>
 
-
     @if(count($categories)>0)
         @foreach ($categories as $category)
-            {{$category}}
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="h1-responsive font-bold">  {!! $category->name !!}</h2>
@@ -30,69 +28,30 @@
             <hr>
 
             <!--First row-->
-            <div class="row mt-5" >
-                <div class="col-lg-4 col-md-12 mb-r">
+            <div class="row mt-5">
+                @foreach ($category->articles as $article)
+                    <div class="col-lg-4 col-md-12 mb-r">
 
-                    <!--Card Light-->
-                    <div class="card">
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <hr>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="black-text d-flex flex-row-reverse">
-                                <h5 class="waves-effect p-2">Read more <i class="fa fa-chevron-right"></i></h5>
-                            </a>
+                        <!--Card Light-->
+                        <div class="card">
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Title-->
+                                <h4 class="card-title">{{$article->title}}</h4>
+                                <hr>
+                                <!--Text-->
+                                <p class="card-text">{{$article->excerpt}}</p>
+                                <a href="{{ route('articles.show', ['id' => $article->id]) }}"
+                                   class="black-text d-flex flex-row-reverse">
+                                    <h5 class="waves-effect p-2">Read more <i class="fa fa-chevron-right"></i></h5>
+                                </a>
+                            </div>
+                            <!--/.Card content-->
                         </div>
-                        <!--/.Card content-->
+                        <!--/.Card Light-->
+
                     </div>
-                    <!--/.Card Light-->
-
-                </div>
-
-                <div class="col-lg-4 col-md-12 mb-r">
-
-                    <!--Card Light-->
-                    <div class="card">
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <hr>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="black-text d-flex flex-row-reverse">
-                                <h5 class="waves-effect p-2">Read more <i class="fa fa-chevron-right"></i></h5>
-                            </a>
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card Light-->
-
-                </div>
-
-                <div class="col-lg-4 col-md-12 mb-r">
-
-                    <!--Card Light-->
-                    <div class="card">
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <hr>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="black-text d-flex flex-row-reverse">
-                                <h5 class="waves-effect p-2">Read more <i class="fa fa-chevron-right"></i></h5>
-                            </a>
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card Light-->
-
-                </div>
+                @endforeach
             </div>
             <!--/.First row-->
             <hr class="extra-margin my-5">

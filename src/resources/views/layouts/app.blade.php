@@ -40,7 +40,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('categories') }}">Разделы</a>
+                                <a class="nav-link" href="{{ route('categories.index') }}">Разделы</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Profile</a>

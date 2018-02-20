@@ -14,7 +14,8 @@ class Article extends Model
         'body',
         'excerpt',
         'published',
-        'user_id'
+        'user_id',
+        'category_id',
     ];
 
     /**
@@ -32,7 +33,7 @@ class Article extends Model
      */
     public function categories()
     {
-        return $this->belongsTo('App\Models\Category')->withTimestamps();
+        return $this->belongsTo('App\Models\Category');
     }
 
     /**

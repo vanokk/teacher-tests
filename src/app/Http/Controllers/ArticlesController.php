@@ -58,7 +58,12 @@ class ArticlesController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-        $article = new Article($request->all());
+        $article = new Article();
+
+        $article->title = $request->title;
+        $article->user_id = $request->user_id;
+        $article->category_id = $request->category_id;
+        $article->body = $request->body;
         $article -> save();
 
         return redirect('categories');

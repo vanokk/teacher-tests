@@ -48,9 +48,9 @@
 
                         <div class="form-group">
                             <label>Раздел</label>
-                            <select class="form-control">
+                            <select class="form-control" name="category_id">
                                 @foreach ($categories as $key => $category)
-                                    <option value="{{$category->id}}"  @if($key == 1) selected @endif>{{$category->name}}</option>
+                                    <option value="{{$category->id}}"  @if($key == 0) selected @endif>{{$category->name}}</option>
                                 @endforeach
                             </select>
                         </div>
