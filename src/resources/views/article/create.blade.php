@@ -35,14 +35,14 @@
                         </div>
 
                         <div class="md-form form-group {{ $errors->has('excerpt') ? ' has-error' : '' }}">
-                            <textarea id="desc" type="text" class="md-textarea" name="excerpt" minlength="2" maxlength="50" required>{{ old('excerpt') }}</textarea>
+                            <textarea id="excerpt" type="text" class="md-textarea" name="excerpt" minlength="2" maxlength="50" required>{{ old('excerpt') }}</textarea>
 
                             @if ($errors->has('excerpt'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('excerpt') }}</strong>
                                 </span>
                             @endif
-                            <label for="desc">Краткое писание</label>
+                            <label for="excerpt">Краткое писание</label>
                         </div>
 
 
@@ -57,9 +57,10 @@
 
                         <div class="md-form form-group {{ $errors->has('body') ? ' has-error' : '' }}">
 
-                            <input id="name" type="text" class="form-control" name="body" value="{{ old('body') }}" minlength="2" maxlength="50" required>
+                            {{--<input id="body" type="text" class="form-control" name="body" value="{{ old('body') }}" minlength="2" maxlength="50" required>--}}
+                            <textarea id="body" type="text" class="" name="body" required>{{ old('body') }}</textarea>
 
-                            <label for="name">body</label>
+                            {{--<label for="body">body</label>--}}
                             @if ($errors->has('body'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('body') }}</strong>

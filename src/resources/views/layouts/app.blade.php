@@ -186,6 +186,11 @@
         <script src="/js//popper.min.js"></script>
         <script src="/js/bootstrap.js"></script>
         <script src="/js/mdb.js"></script>
+        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+        <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
         <script src="/js/app.js"></script>
+        <script>
+            $('#body').ckeditor();
+        </script>
     </body>
 </html>

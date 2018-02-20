@@ -61,6 +61,7 @@ class ArticlesController extends Controller
         $article = new Article();
 
         $article->title = $request->title;
+        $article->excerpt = $request->excerpt;
         $article->user_id = $request->user_id;
         $article->category_id = $request->category_id;
         $article->body = $request->body;
